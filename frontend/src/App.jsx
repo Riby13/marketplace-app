@@ -7,12 +7,14 @@ import CreateOfferPage from './pages/CreateOfferPage'
 import OfferDetailPage from './pages/OfferDetailPage'
 import DashboardPage from './pages/DashboardPage'
 import Logo from './components/Logo'
+import Footer from './components/Footer'
 import './App.css'
 
 function App() {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem('theme') || 'light'
   })
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme)
@@ -31,10 +33,13 @@ function App() {
             <a href="/" className="nav-brand">
               <Logo />
             </a>
-            <ul className="nav-menu">
-              <li><a href="/">Home</a></li>
-              <li><a href="/dashboard">Dashboard</a></li>
-              <li><a href="/login">Login</a></li>
+            <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+              {menuOpen ? '✕' : '☰'}
+            </button>
+            <ul className={`nav-menu ${menuOpen ? 'open' : ''}`}>
+              <li><a href="/" onClick={() => setMenuOpen(false)}>Home</a></li>
+              <li><a href="/dashboard" onClick={() => setMenuOpen(false)}>Dashboard</a></li>
+              <li><a href="/login" onClick={() => setMenuOpen(false)}>Login</a></li>
               <li>
                 <button className="theme-toggle" onClick={toggleTheme} title="Toggle theme">
                   {theme === 'light' ? '🌙' : '☀️'}
@@ -54,6 +59,8 @@ function App() {
             <Route path="/dashboard" element={<DashboardPage />} />
           </Routes>
         </main>
+
+        <Footer />
       </div>
     </Router>
   )

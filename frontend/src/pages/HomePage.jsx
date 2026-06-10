@@ -8,8 +8,8 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <div className="hero">
-        <h1>Welcome to Marketplace</h1>
-        <p>Buy and sell items through direct negotiation</p>
+        <h1>The Offer Point</h1>
+        <p>Where deals get done</p>
       </div>
 
       <div className="actions">
