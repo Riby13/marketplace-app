@@ -6,6 +6,7 @@ import RegisterPage from './pages/RegisterPage'
 import CreateOfferPage from './pages/CreateOfferPage'
 import OfferDetailPage from './pages/OfferDetailPage'
 import DashboardPage from './pages/DashboardPage'
+import Logo from './components/Logo'
 import './App.css'
 
 function App() {
@@ -27,7 +28,9 @@ function App() {
       <div className="app">
         <nav className="navbar">
           <div className="nav-container">
-            <a href="/" className="nav-brand">Marketplace</a>
+            <a href="/" className="nav-brand">
+              <Logo />
+            </a>
             <ul className="nav-menu">
               <li><a href="/">Home</a></li>
               <li><a href="/dashboard">Dashboard</a></li>
