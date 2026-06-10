@@ -1,3 +1,44 @@
+:root {
+  /* Light Theme */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --border-color: #e0e0e0;
+  --primary-color: #1b5e20;
+  --primary-hover: #145a1a;
+  --primary-light: #4caf50;
+  --secondary-color: #f5f5f5;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --error-color: #f44336;
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-dark: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --bg-tertiary: #2d2d2d;
+  --text-primary: #e8e8e8;
+  --text-secondary: #b0b0b0;
+  --text-tertiary: #808080;
+  --border-color: #404040;
+  --primary-color: #4caf50;
+  --primary-hover: #66bb6a;
+  --primary-light: #81c784;
+  --secondary-color: #2d2d2d;
+  --success-color: #4caf50;
+  --warning-color: #ff9800;
+  --error-color: #ef5350;
+  --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-dark: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +49,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .app {
@@ -20,10 +62,12 @@ body {
 
 /* Navbar */
 .navbar {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: var(--bg-primary);
+  box-shadow: var(--shadow-light);
   position: sticky;
   top: 0;
+  border-bottom: 2px solid var(--border-color);
+  z-index: 1000;
 }
 
 .nav-container {
@@ -37,25 +81,42 @@ body {
 
 .nav-brand {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #007bff;
+  font-weight: 700;
+  color: var(--primary-color);
   text-decoration: none;
+  letter-spacing: -0.5px;
 }
 
 .nav-menu {
   list-style: none;
   display: flex;
   gap: 2rem;
+  align-items: center;
 }
 
 .nav-menu a {
   text-decoration: none;
-  color: #333;
+  color: var(--text-primary);
   transition: color 0.3s;
+  font-weight: 500;
 }
 
 .nav-menu a:hover {
-  color: #007bff;
+  color: var(--primary-color);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  transition: color 0.3s;
+  padding: 0.5rem;
+}
+
+.theme-toggle:hover {
+  color: var(--primary-color);
 }
 
 /* Main Content */
@@ -77,28 +138,32 @@ body {
 .button {
   padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
+  font-weight: 600;
 }
 
 .button-primary {
-  background-color: #007bff;
+  background-color: var(--primary-color);
   color: white;
 }
 
 .button-primary:hover {
-  background-color: #0056b3;
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
 }
 
 .button-secondary {
-  background-color: #6c757d;
-  color: white;
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
 }
 
 .button-secondary:hover {
-  background-color: #5a6268;
+  background-color: var(--border-color);
 }
 
 /* Forms */
@@ -109,7 +174,8 @@ body {
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 .form-group input,
@@ -117,10 +183,13 @@ body {
 .form-group select {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
   font-size: 1rem;
   font-family: inherit;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.3s;
 }
 
 .form-group textarea {
@@ -132,23 +201,30 @@ body {
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.15);
 }
 
 /* Cards */
 .card {
-  background: white;
+  background: var(--bg-primary);
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-light);
   margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-medium);
 }
 
 .card-title {
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 1rem;
+  color: var(--text-primary);
 }
 
 /* Responsive */

@@ -5,7 +5,8 @@
 
 .dashboard-page h1 {
   margin-bottom: 2rem;
-  color: #333;
+  color: var(--text-primary);
+  font-weight: 700;
 }
 
 .stats-grid {
@@ -16,36 +17,44 @@
 }
 
 .stat-card {
-  background: white;
+  background: var(--bg-primary);
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
   text-align: center;
+  border: 2px solid var(--border-color);
+  transition: all 0.3s;
+}
+
+.stat-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-medium);
 }
 
 .stat-number {
   font-size: 2.5rem;
-  font-weight: bold;
-  color: #007bff;
+  font-weight: 700;
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
 .stat-label {
-  color: #666;
-  font-weight: 500;
+  color: var(--text-secondary);
+  font-weight: 600;
 }
 
 /* Offers Section */
 .offers-section {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--bg-primary);
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
   overflow: hidden;
+  border: 1px solid var(--border-color);
 }
 
 .tabs {
   display: flex;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .tab {
@@ -55,18 +64,20 @@
   background: none;
   cursor: pointer;
   font-size: 1rem;
-  color: #666;
+  color: var(--text-secondary);
   border-bottom: 3px solid transparent;
   transition: all 0.3s;
+  font-weight: 600;
 }
 
 .tab:hover {
-  background: #f9f9f9;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 .tab.active {
-  color: #007bff;
-  border-bottom-color: #007bff;
+  color: var(--primary-color);
+  border-bottom-color: var(--primary-color);
 }
 
 .offers-list {
@@ -79,7 +90,7 @@
   gap: 1rem;
   align-items: center;
   padding: 1.5rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-color);
   transition: background 0.3s;
 }
 
@@ -88,7 +99,7 @@
 }
 
 .offer-row:hover {
-  background: #f9f9f9;
+  background: var(--bg-secondary);
 }
 
 .offer-info {
@@ -103,12 +114,13 @@
 
 .offer-details h3 {
   margin: 0;
-  color: #333;
+  color: var(--text-primary);
   font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .offer-date {
-  color: #999;
+  color: var(--text-tertiary);
   font-size: 0.9rem;
   margin: 0.25rem 0 0 0;
 }
@@ -119,13 +131,13 @@
 
 .price-label {
   font-size: 0.85rem;
-  color: #999;
+  color: var(--text-tertiary);
   margin: 0;
 }
 
 .price-value {
-  font-weight: bold;
-  color: #333;
+  font-weight: 700;
+  color: var(--primary-color);
   font-size: 1.1rem;
   margin: 0.25rem 0 0 0;
 }

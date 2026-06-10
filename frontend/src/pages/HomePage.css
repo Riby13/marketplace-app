@@ -7,19 +7,21 @@
 .hero {
   text-align: center;
   padding: 3rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
   color: white;
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .hero p {
   font-size: 1.25rem;
-  opacity: 0.9;
+  opacity: 0.95;
+  font-weight: 500;
 }
 
 .actions {
@@ -29,27 +31,30 @@
 }
 
 .action-card {
-  background: white;
+  background: var(--bg-primary);
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: var(--shadow-medium);
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.3s;
+  border: 2px solid transparent;
 }
 
 .action-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-dark);
+  border-color: var(--primary-color);
 }
 
 .action-card h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--text-primary);
+  font-weight: 700;
 }
 
 .action-card p {
-  color: #666;
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
   line-height: 1.6;
 }
@@ -57,15 +62,17 @@
 .auth-section {
   text-align: center;
   padding: 2rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: var(--bg-primary);
+  border-radius: 12px;
+  box-shadow: var(--shadow-light);
+  border: 1px solid var(--border-color);
 }
 
 .auth-section p {
   font-size: 1.1rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 .auth-section .button {
