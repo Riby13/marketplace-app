@@ -12,6 +12,17 @@
   border-radius: 12px;
 }
 
+.hero-logo {
+  display: none;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-logo {
+    display: block;
+  }
+}
+
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;

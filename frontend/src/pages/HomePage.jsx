@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { IconSell, IconBuy, IconDashboard, IconHome } from '../components/Icons'
+import Logo from '../components/Logo'
 import './HomePage.css'
 
 export default function HomePage() {
@@ -8,6 +9,9 @@ export default function HomePage() {
   return (
     <div className="home-page">
       <div className="hero">
+        <div className="hero-logo">
+          <Logo />
+        </div>
         <h1>The Offer Point</h1>
         <p>Where deals get done</p>
       </div>
